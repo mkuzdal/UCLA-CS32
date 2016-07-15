@@ -1,0 +1,31 @@
+Part 2.
+The first 12 (r,c) coordinates popped off the stack by the algorithm are:
+1.	6,4
+2.	6,3
+3.	6,5
+4.	7,5
+5.	8,5
+6.	8,6
+7.	8,7
+8.	8,8
+9.	7,8
+10.	6,6
+11.	5,4
+12.	4,4
+
+Part 4.
+The first 12 (r,c) coordinates dequeued from the queue by the algorithm are:
+1.	6,4
+2.	5,4
+3.	6,5
+4.	6,3
+5.	4,4
+6.	6,6
+7.	7,5
+8.	3,4
+9.	4,5
+10.	8,5
+11.	2,4
+12.	4,6
+
+The stack implementation behaves differently than the queue implementation because of the differences in how the coordinates are popped from the stack (or queue). The algorithm took a position and pushed each adjacent position that has not previously been checked onto the stack/queue. Because stacks are LIFO, the stack implementation would stick to one path, until it reached a dead end or found the finish. Because the queues are FIFO, its implementation would get all the adjacent positions for each of the coordinates in the queue, then move onto the next adjacent positions.

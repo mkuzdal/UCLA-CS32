@@ -1,0 +1,9 @@
+2.)  The call to Map<Coord, int>::insert requires the Key to have a ‘not equal’ operator in order to check if the coords match or not.
+
+3b.) The other variable (path) was necessary in order to keep track of the paths that have already been traversed. Without the other variable, there would be no record of what the current path is and what paths had already been used.
+
+4a.) The algorithm has 3 for-loops nested within each other, and no other complicated operations (only operations that are simple such as comparisons and addition). Because there are 3 loops each traversing from 0 to N, this algorithm is O(N^3).
+
+4b.) The difference between this algorithm and the first is that one of the for-loops only traverses from 0 to the end of the variable of the outer loop. This for-loop is called less than in the first algorithm (on average n+1/2 times). This would make the efficiency N*N*(N+1/2) or in other words O(N^3), just like the last algorithm (with a smaller coefficient).
+
+5.)  The first operations that occur in this function are comparisons (constant time (O(1)). Then we enter a for loop (linear time (O(N)), and within this loop we perform minor operations, and then call the get function or the erase function (which both exhibit linear time (O(N)). Swap is then called outside of the for-loop which exhibits linear time (O(N)). Because swap was called outside of the loop its coefficient gets dropped, resulting in a O(N^2) time complexity.

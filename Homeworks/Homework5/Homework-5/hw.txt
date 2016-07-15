@@ -1,0 +1,97 @@
+1.a)		50
+	       /  \
+	     20    60
+            /  \     \
+          10    40    70
+           \   /     /  \
+          15  30   65    80
+             /  \        /
+            25   35    75
+
+1.b)		50
+	       /  \
+	     25    60
+            /  \     \
+          10    40    70
+           \   /     /  \
+          15  35   65    80
+                         /
+                       75
+
+1.c) 
+Inorder:		Preorder:		Postorder:
+10			50			15
+15			20			10
+20			10			25
+25			15			35
+30			40			30
+35			30			40
+40			25			20
+50			35			65
+60			60			75
+65			70			80
+70			65			70
+75			80			60
+80			75			50
+
+2.a)		 7
+	        / \
+	       3   5
+              / \ / 
+             1  2 4
+
+2.b)
+	+———+———+———+———+———+———+
+	| 7 | 3 | 5 | 1 | 2 | 4 |
+	+———+———+———+———+———+———+
+      /				 \
+    Top				  End
+
+2.c)
+	+———+———+———+———+———+———+
+	| 5 | 3 | 4 | 1 | 2 |   |
+	+———+———+———+———+———+———+
+      /				 \
+    Top				  End
+
+
+3.a)
+struct BinaryTreeNode
+{
+    BinaryTreeNode* left;
+    BinaryTreeNode* right;
+    BinaryTreeNode* parent;
+    int data;
+};
+
+3.b)
+insert(Node* nodeToInsert, Node* root)
+if the root is nullptr (i.e., the tree is empty)
+	set the nodeToInsert to the root and its parent 
+	pointer to nullptr
+
+if the node to insert’s value is smaller than the root’s
+	if the root does not have a left child
+		set the root’s left pointer to nodeToInsert
+		and nodeInInsert’s parent to the root
+	otherwise
+		call insert on nodeToInsert with the left half of the tree, where the root is now the left child.
+else if the node to insert’s value is greater than the root’s
+	if the root does not have a right child
+		set the root’s right pointer to nodeToInsert
+		and nodeInInsert’s parent to the root
+	otherwise
+		call insert on nodeToInsert with the right half of the tree, where the root is now the right child.
+else
+	they are equal (do nothing)
+
+4.
+a)	O(C + S)
+b.)	O(S + log C)
+c.)	O(log SC)
+d.)	O(log S)
+e.)	O(1)
+f.)	O(S + log C)
+g.)	O(S log S)
+h.)	O(C log S)
+	
